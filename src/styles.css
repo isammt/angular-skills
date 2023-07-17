@@ -1,2 +1,60 @@
 /* Add application styles & imports to this file! */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@font-face {
+    font-family: 'Champagne &amp; Limousines';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Champagne &amp; Limousines'), url('fonts/ChampagneLimousines.ttf');
+}
+
+@font-face {
+    font-family: 'Champagne &amp; Limousines';
+    font-style: italic;
+    font-weight: 200;
+    src: local('Champagne &amp; Limousines'), url('fonts/ChampagneLimousinesItalic.ttf');
+}
+
+@font-face {
+    font-family: 'Champagne &amp; Limousines';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Champagne &amp; Limousines'), url('fonts/ChampagneLimousinesBold.ttf');
+}
+
+@font-face {
+    font-family: 'Champagne &amp; Limousines';
+    font-style: italic;
+    font-weight: 500;
+    src: local('Champagne &amp; Limousines'), url('fonts/ChampagneLimousinesBoldItalic.ttf');
+}
+
+* {
+    font-family: 'Champagne &amp; Limousines' !important;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+}
+
+@media (min-width: 960px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        width: 1200px;
+    }
+}
