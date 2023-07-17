@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
   cards: Array<any>;
   isLoading: boolean;
 
+
   constructor(private skillService: SkillService) {
     this.isLoading = true;
   }
@@ -22,7 +23,9 @@ export class DashboardComponent implements OnInit {
       .subscribe((ret: any) => {
         this.cards = ret
         this.isLoading = false;
-      }) 
+        sessionStorage.setItem('sessionSave', JSON.stringify(this.cards))
+      })
+
   }
 
 }

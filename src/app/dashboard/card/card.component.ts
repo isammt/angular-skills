@@ -22,6 +22,13 @@ export class CardComponent implements OnInit {
     this.showAnimation = false;
     this.skillService.updateSkill(card).subscribe((ret: any) => {
       this.showAnimation = true;
+
+      this
+        .skillService
+        .getSkills()
+        .subscribe((ret: any) => {
+          sessionStorage.setItem('sessionSave', JSON.stringify(ret))
+        }) 
     });
   }
 
