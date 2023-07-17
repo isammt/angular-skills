@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Card } from './card';
+import { SkillService } from './skill.service';
 
 @Component({
   selector: 'app-card',
@@ -7,18 +9,26 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  @Input() card;
-  constructor() { }
+  @Input() card: Card;
+
+  constructor(private skillService: SkillService) { }
 
   ngOnInit() {
   }
 
-  onLike(card: any){
-   alert(card.likes)
+  async onLike(card: Card) {
+    card.likes = card.likes + 1;
+    this.skillService.updateSkill(card);
   }
 
-  onShare(card: any){
-    // TODO: abrir o link do seu linkedin
+  buttonColor(cardLikes: number) {
+    return 'mat-button ' + (cardLikes >= 5 && cardLikes < 10 ? 'blue' :
+      cardLikes >= 10 ? 'pink' :
+        'default')
+  }
+
+  onShare() {
+    window.open("https://www.linkedin.com/in/isabellatrigo/", '_blank')
   }
 
 }
