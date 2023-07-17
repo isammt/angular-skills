@@ -1,6 +1,7 @@
 :host {
   display: flex;
   flex: 1 1 100%;
+  justify-content: center;
 }
 
 @media screen and (min-width: 960px) {
@@ -15,10 +16,117 @@
   }
 }
 
-.blue {
-  background-color: blue;
+h2 {
+  font-size: 18px;
+  font-size: 24px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 8px 0;
 }
 
-.pink {
-  background-color: pink;
+.card {
+  max-width: 400px;
+  border-radius: 15px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid #d1d1d1;
+  padding: 12px;
+  width: 100%;
+}
+
+img {
+  border-radius: 5px;
+  max-height: 160px;
+  object-fit: scale-down;
+}
+
+.card__photo {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.card__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__content p {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 300;
+}
+
+.card__share {
+  background-color: transparent;
+  border: 0;
+  border-radius: 5px;
+  padding: 5px;
+  min-width: 75px;
+  cursor: pointer;
+  margin-top: 14px;
+  border: 1px solid #0d4008;
+}
+
+.card__share:hover {
+  color: white;
+  background-color: #0d4008;
+}
+
+.card__like {
+  background-color: transparent;
+  border: 0;
+  position: relative;
+  width: 70px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.card__like.blue img {
+  filter: invert(63%) sepia(61%) saturate(5813%) hue-rotate(162deg) brightness(96%) contrast(101%);
+}
+
+.card__like.pink img {
+  filter: invert(7%) sepia(81%) saturate(6366%) hue-rotate(15deg) brightness(89%) contrast(87%);
+}
+
+.card__like img {
+  position: absolute;
+  left: 10%;
+  top: -25%;
+}
+
+.card__like small {
+  position: absolute;
+  z-index: 10;
+  color: white;
+  font-weight: 800;
+  top: 30%;
+  right: 47%;
+  font-size: 12px;
+}
+
+@keyframes fade {
+  0% { 
+    opacity: 0;
+    top: 0;
+  }
+  20% { 
+    opacity: 1;
+    top: -25px;
+  }
+  100% {
+    opacity: 0;
+    top: -50px;
+  }
+}
+
+
+.card__like img:not(:first-child),
+.card__like.blue img:not(:first-child),
+.card__like.pink img:not(:first-child) {
+  animation: fade .5s;
 }

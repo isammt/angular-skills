@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { Card } from './card';
 import { SkillService } from './skill.service';
 
@@ -7,27 +7,31 @@ import { SkillService } from './skill.service';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
+
 export class CardComponent implements OnInit {
-
   @Input() card: Card;
-
+  showAnimation: boolean = false;
+  
   constructor(private skillService: SkillService) { }
 
   ngOnInit() {
   }
 
-  async onLike(card: Card) {
+  async onLike(card: Card){
     card.likes = card.likes + 1;
-    this.skillService.updateSkill(card);
+    this.showAnimation = false;
+    this.skillService.updateSkill(card).subscribe((ret: any) => {
+      this.showAnimation = true;
+    });
   }
 
   buttonColor(cardLikes: number) {
-    return 'mat-button ' + (cardLikes >= 5 && cardLikes < 10 ? 'blue' :
-      cardLikes >= 10 ? 'pink' :
-        'default')
+    return 'card__like ' + (cardLikes >= 5 && cardLikes <= 10 ? 'blue' : 
+           cardLikes >= 10 ? 'pink' : 
+           'default')
   }
 
-  onShare() {
+  onShare(){
     window.open("https://www.linkedin.com/in/isabellatrigo/", '_blank')
   }
 
