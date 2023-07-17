@@ -11,12 +11,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FakeApiService } from './fake-api.service';
 import { HelloComponent } from './hello.component';
 import { LoadingComponent } from './dashboard/loading/loading.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule, MatButtonModule, MatChipsModule, MatCardModule, HttpClientModule, InMemoryWebApiModule.forRoot(FakeApiService, {delay: 5000}) ],
-  declarations: [ AppComponent, HelloComponent, DashboardComponent, CardComponent, LoadingComponent ],
+  declarations: [ AppComponent, HelloComponent, DashboardComponent, CardComponent, LoadingComponent, HeaderComponent, FooterComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

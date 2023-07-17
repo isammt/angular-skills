@@ -1,0 +1,22 @@
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0 24px;
+    justify-content: center;
+    border-bottom: 2px solid #d1d1d1;
+    margin-bottom: 48px;
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 32px;
+    line-height: 48px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
