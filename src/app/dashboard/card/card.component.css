@@ -1,3 +1,24 @@
-.example-card {
-    max-width: 400px;
+:host {
+  display: flex;
+  flex: 1 1 100%;
+}
+
+@media screen and (min-width: 960px) {
+  :host {
+    flex: 1 1 47.5%;
   }
+}
+
+@media screen and (min-width: 1280px) {
+  :host {
+    flex: 1 1 30%;
+  }
+}
+
+.blue {
+  background-color: blue;
+}
+
+.pink {
+  background-color: pink;
+}
