@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { SkillService } from './card/skill.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +10,14 @@ export class DashboardComponent implements OnInit {
 
   cards: Array<any>;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private skillService: SkillService) { }
 
   ngOnInit() {
-    this.httpClient.get('/api/skills').subscribe((ret: Array<any>) => this.cards = ret);
+    this
+      .skillService
+      .getSkills()
+      .subscribe((ret: any) => {
+        this.cards = ret
+      })
   }
-
 }

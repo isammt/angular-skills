@@ -14,7 +14,7 @@ export class CardComponent implements OnInit {
   }
 
   onLike(card: any){
-    // TODO: incrementar o like, salvar via rest
+   alert(card.likes)
   }
 
   onShare(card: any){
