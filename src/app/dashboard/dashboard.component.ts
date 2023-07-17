@@ -9,8 +9,11 @@ import { SkillService } from './card/skill.service';
 export class DashboardComponent implements OnInit {
 
   cards: Array<any>;
+  isLoading: boolean;
 
-  constructor(private skillService: SkillService) { }
+  constructor(private skillService: SkillService) {
+    this.isLoading = true;
+  }
 
   ngOnInit() {
     this
@@ -18,6 +21,8 @@ export class DashboardComponent implements OnInit {
       .getSkills()
       .subscribe((ret: any) => {
         this.cards = ret
-      })
+        this.isLoading = false;
+      }) 
   }
+
 }

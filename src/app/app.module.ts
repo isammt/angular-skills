@@ -10,12 +10,13 @@ import { CardComponent } from './dashboard/card/card.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FakeApiService } from './fake-api.service';
 import { HelloComponent } from './hello.component';
+import { LoadingComponent } from './dashboard/loading/loading.component';
 
 
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule, MatButtonModule, MatChipsModule, MatCardModule, HttpClientModule, InMemoryWebApiModule.forRoot(FakeApiService, {delay: 5000}) ],
-  declarations: [ AppComponent, HelloComponent, DashboardComponent, CardComponent ],
+  declarations: [ AppComponent, HelloComponent, DashboardComponent, CardComponent, LoadingComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
